@@ -1,73 +1,202 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Data Analyst BI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mouhcine FERDOUS — Power BI Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#60a5fa;
+      --glass: rgba(255,255,255,0.02);
+      --maxw:1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg),#071021 140%);
+      color:#e6eef8;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{width:100%;max-width:var(--maxw)}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:700;color:#061226}
+    .name{line-height:1}
+    .name h1{margin:0;font-size:18px}
+    .name p{margin:0;color:var(--muted);font-size:13px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-bottom:34px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:28px}
+    .tag{color:var(--accent);font-weight:600;font-size:13px;margin-bottom:10px}
+    .headline{font-size:28px;line-height:1.05;margin:0 0 14px}
+    .sub{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#042038;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.alt{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stat{background:var(--glass);padding:10px 12px;border-radius:10px;font-size:13px;color:var(--muted)}
+    .preview{background:linear-gradient(90deg,#071428 0%, #08132a 100%);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .preview img{width:100%;height:220px;object-fit:cover;border-radius:10px;display:block}
+    .preview .meta{display:flex;justify-content:space-between;margin-top:10px;color:var(--muted);font-size:13px}
+    section{margin-bottom:28px}
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:repeat(2,1fr)}
+    .three{grid-template-columns:repeat(3,1fr)}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    h3{margin:0 0 10px}
+    p.muted{color:var(--muted);margin:0}
+    ul.clean{padding:0;margin:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+    li.item{display:flex;gap:10px;align-items:flex-start}
+    .dot{width:10px;height:10px;border-radius:6px;background:rgba(255,255,255,0.04);margin-top:6px}
+    .project-thumb img{width:100%;height:140px;border-radius:8px;object-fit:cover;}
+    .project-meta{margin-top:12px;color:var(--muted);font-size:13px}
+    .kpi{font-weight:700;color:#dbeafe}
+    footer{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:13px}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .preview{order:2}
+      .hero-card{order:1}
+      .three{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-  <!-- Header -->
-  <header class="bg-white shadow-md p-6 text-center">
-    <h1 class="text-3xl font-bold">Mouhcine FERDOUS</h1>
-    <p class="text-lg text-gray-600">Power BI | Power Platform | SQL | DAX | Python</p>
-  </header>
-
-  <!-- À propos -->
-  <section class="max-w-3xl mx-auto p-6">
-    <h2 class="text-2xl font-semibold mb-4">À propos</h2>
-    <p>
-      Je suis Data Analyst spécialisé en Business Intelligence. J’aide les entreprises à transformer leurs données en tableaux de bord clairs et actionnables. Disponible pour missions ponctuelles (Power BI, SQL, reporting automatisé).
-    </p>
-  </section>
-
-  <!-- Projets -->
-  <section class="bg-gray-100 py-8">
-    <div class="max-w-5xl mx-auto p-6">
-      <h2 class="text-2xl font-semibold mb-6 text-center">Projets</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Projet 1 -->
-        <div class="bg-white rounded-2xl shadow p-4">
-          <img src="téléchargement.jpg" alt="Projet Ventes" class="rounded-lg mb-3">
-          <h3 class="text-xl font-semibold">Dashboard Approvisionnement</h3>
-          <p class="text-sm text-gray-600 mb-2">Suivi des ventes, livaraison et marges, détection des retards des livaraison.</p>
-          <a href="#" class="text-blue-600 hover:underline">Voir le projet</a>
-        </div>
-        <!-- Projet 2 -->
-        <div class="bg-white rounded-2xl shadow p-4">
-          <img src="téléchargement.jpg" alt="Projet Finance" class="rounded-lg mb-3">
-          <h3 class="text-xl font-semibold">Dashboard Finance</h3>
-          <p class="text-sm text-gray-600 mb-2">Suivi du cashflow et prévisions simple et controle de gestion.</p>
-          <a href="#" class="text-blue-600 hover:underline">Voir le projet</a>
-        </div>
-        <!-- Projet 3 -->
-        <div class="bg-white rounded-2xl shadow p-4">
-          <img src="téléchargement.jpg" alt="Projet RH" class="rounded-lg mb-3">
-          <h3 class="text-xl font-semibold">Dashboard performance opérationnel</h3>
-          <p class="text-sm text-gray-600 mb-2">Pilotage de production réseau Fibres optiques.</p>
-          <a href="#" class="text-blue-600 hover:underline">Voir le projet</a>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">MF</div>
+        <div class="name">
+          <h1>Mouhcine FERDOUS</h1>
+          <p>Power BI Developer · Data Visualization Specialist</p>
         </div>
       </div>
-    </div>
-  </section>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <!-- Compétences -->
-  <section class="max-w-3xl mx-auto p-6">
-    <h2 class="text-2xl font-semibold mb-4">Compétences</h2>
-    <ul class="list-disc list-inside space-y-1">
-      <li>Power BI (Power Query, DAX, Modélisation)</li>
-      <li>SQL (SQL Server, PostgreSQL)</li>
-      <li>Python (pandas, matplotlib)</li>
-      <li>Data storytelling & visualisation</li>
-    </ul>
-  </section>
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <div class="tag">Power BI · DAX · Data Strategy</div>
+          <h2 class="headline">Your data has a voice. I make sure it tells the story you need to hear.</h2>
+          <p class="sub">I design minimalist, action-first Power BI dashboards that help leaders make faster, smarter decisions — from finance to operations.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Let's work together</a>
+            <a class="btn alt" href="#projects">View work</a>
+          </div>
 
-  <!-- Contact -->
-  <footer class="bg-white shadow-inner p-6 text-center">
-    <h2 class="text-xl font-semibold mb-2">Contact</h2>
-    <p>Email : <a href="mailto:ton.email@mail.com" class="text-blue-600 hover:underline">ton.email@mail.com</a></p>
-    <p>LinkedIn : <a href="#" class="text-blue-600 hover:underline">linkedin.com/in/tonprofil</a></p>
-    <p>GitHub : <a href="#" class="text-blue-600 hover:underline">github.com/tonprofil</a></p>
-  </footer>
+          <div class="stats" aria-hidden>
+            <div class="stat">3+ years freelancing</div>
+            <div class="stat">Finance · Retail · Ops</div>
+            <div class="stat">Dashboard + RLS + Automations</div>
+          </div>
+        </div>
+
+        <aside class="preview card">
+          <img src="téléchargement.jpg" alt="dashboard preview">
+          <div class="meta"><span>Sales Performance — Demo</span><span class="kpi">Top KPI: +42%</span></div>
+        </aside>
+      </section>
+
+      <section id="about" class="grid two">
+        <div class="card">
+          <h3>About</h3>
+          <p class="muted">I’m Mouhcine — a focused Power BI developer who turns scattered data into clear dashboards that support decisions. I combine Power Query, robust data models and pragmatic UX to deliver dependable reports and automations.</p>
+          <p style="margin-top:12px;color:var(--muted);font-size:13px">Industries: Finance · Retail · Operations · Startups</p>
+        </div>
+
+        <div class="card">
+          <h3>Services</h3>
+          <ul class="clean">
+            <li class="item"><span class="dot"></span><div><strong>Dashboard Development</strong><div class="muted">Interactive reports, drill-throughs, bookmarks.</div></div></li>
+            <li class="item"><span class="dot"></span><div><strong>Data Modeling & DAX</strong><div class="muted">Star schemas, advanced measures, time intelligence.</div></div></li>
+            <li class="item"><span class="dot"></span><div><strong>ETL & Integration</strong><div class="muted">Power Query, SQL, API connections.</div></div></li>
+            <li class="item"><span class="dot"></span><div><strong>Deployment & RLS</strong><div class="muted">Power BI Service, scheduled refresh, row-level security.</div></div></li>
+            <li class="item"><span class="dot"></span><div><strong>Consulting & Training</strong><div class="muted">Data strategy and team enablement.</div></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h3 style="margin-bottom:12px">Selected Projects</h3>
+        <div class="grid three">
+          <article class="card">
+            <div class="project-thumb"><img src="téléchargement.jpg" alt="Project 1"></div>
+            <div class="project-meta"><strong>Problem:</strong> Fragmented sales reporting. <br><strong>Solution:</strong> Automated monthly dashboard with drilldowns. <br><strong>Impact:</strong> Reporting time −70%.</div>
+          </article>
+          <article class="card">
+            <div class="project-thumb"><img src="téléchargement.jpg" alt="Project 2"></div>
+            <div class="project-meta"><strong>Problem:</strong> Long close cycles. <br><strong>Solution:</strong> KPI-driven close tracker and variance analysis. <br><strong>Impact:</strong> Faster reconciliations.</div>
+          </article>
+          <article class="card">
+            <div class="project-thumb"><img src="téléchargement.jpg" alt="Project 3"></div>
+            <div class="project-meta"><strong>Problem:</strong> Stockouts & overstock. <br><strong>Solution:</strong> Reorder signals + ABC analysis. <br><strong>Impact:</strong> Reduced stock costs.</div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h3 style="margin-bottom:10px">Testimonials</h3>
+        <div class="grid two">
+          <div class="card">
+            <p class="muted">"Mouhcine built a dashboard that became our single source of truth. Reporting that took hours now takes minutes."</p>
+            <p style="margin-top:10px;color:var(--muted);font-size:13px">— Product Manager, Retail</p>
+          </div>
+          <div class="card">
+            <p class="muted">"Clear, practical and fast. The dashboard helped our board make quicker decisions."</p>
+            <p style="margin-top:10px;color:var(--muted);font-size:13px">— Head of Finance, SaaS</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Skills & Tools</h3>
+        <div class="card" style="display:flex;gap:18px;flex-wrap:wrap">
+          <div style="min-width:160px">
+            <strong>Data & Modeling</strong>
+            <p class="muted">Power Query · SQL · Star Schema</p>
+          </div>
+          <div style="min-width:160px">
+            <strong>DAX & Calculations</strong>
+            <p class="muted">Time Intelligence · Rolling measures · Complex KPIs</p>
+          </div>
+          <div style="min-width:160px">
+            <strong>Deployment</strong>
+            <p class="muted">Power BI Service · RLS · Scheduled refresh</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h3>Contact</h3>
+        <p class="muted">Ready to convert your data into reliable decisions? Let's talk.</p>
+        <p style="margin-top:12px"><strong>Email:</strong> <a href="mailto:youremail@example.com" style="color:var(--accent);text-decoration:none">youremail@example.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="#" style="color:var(--accent);text-decoration:none">linkedin.com/in/yourprofile</a></p>
+        <div style="margin-top:12px">
+          <a class="btn" href="mailto:youremail@example.com">Email me</a>
+          <a class="btn alt" href="#projects">See projects</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <strong>Mouhcine FERDOUS</strong> · Power BI Freelance</div>
+      <div style="color:var(--muted)">Designed for clarity · Minimal · Action-first</div>
+    </footer>
+  </div>
 </body>
 </html>
