@@ -80,6 +80,14 @@
   object-fit: cover;
   display: block;
 }
+    .project-thumb img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-thumb img:hover {
+  transform: scale(1.03);
+}
     .project-meta{margin-top:12px;color:var(--muted);font-size:13px}
     .kpi{font-weight:700;color:#dbeafe}
     footer{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:13px}
@@ -150,7 +158,9 @@
         <h3 style="margin-bottom:12px">Selected Projects</h3>
         <div class="grid three">
           <article class="card">
-            <div class="project-thumb"><img src="finanecial_dash.png" alt="Project 1"></div>
+            <div class="project-thumb"><a href="finanecial_dash.png" target="_blank">
+  <img src="finanecial_dash.png" alt="Project 1">
+</a></div>
             <div class="project-meta"><strong>Problem:</strong> Fragmented financial data and manual reporting. <br><strong>Solution:</strong> Automated monthly P&L dashboard in Power BI with drilldowns. <br><strong>Impact:</strong> Reporting time −70% and improved financial visibility.</div>
           </article>
           <article class="card">
